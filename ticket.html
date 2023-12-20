@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ticket.css">
+    <link rel="shortcut icon" type="x-icon" href="image/logo.jpg">
+    <title>Ticket Selling</title>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html"><img src="image/logo.jpg"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()" aria-hidden="true"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="">SERVICES</a></li>
+                <li><a href="services.html">PRODUCTS</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()" aria-hidden="true"></i>
+    </nav>
+
+    <section class="header">
+        <h1>Explore the World - Book Your Ticket Now!</h1>
+    </section>
+
+
+    <section class="destination-list" id="destinationList">
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const destinations = [
+                { name: 'Paris', image: 'image/paris.jpg', description: 'Explore the city of love.' },
+                { name: 'Tokyo', image: 'image/tokyoo.jpg', description: 'Discover the vibrant culture of Tokyo.' },
+                { name: 'London', image: 'image/london.jpg', description: 'Watch musical play and see West End shows.' },
+                { name: 'Canada', image: 'image/canada.jpeg', description: 'Taste the maple.' },
+                { name: 'Philippines', image: 'image/philippines.jpg', description: 'Explore the islands of the Philippine.' },
+                { name: 'India', image: 'image/india.png', description: 'Mekus Mekus na yan insan.' },
+                { name: 'Italy', image: 'image/italy.jpg', description: 'Reminisce the Roman Empire.' },
+                { name: 'South Korea', image: 'image/kor.jpg', description: 'Attend to the concert of your favorite Kpop idols.' },
+            ];
+
+            const destinationList = document.getElementById('destinationList');
+
+            destinations.forEach(destination => {
+                const card = document.createElement('div');
+                card.classList.add('destination-card');
+
+                const image = document.createElement('img');
+                image.src = destination.image;
+                image.alt = destination.name;
+
+                const info = document.createElement('div');
+                info.classList.add('info');
+
+                const heading = document.createElement('h3');
+                heading.textContent = destination.name;
+
+                const description = document.createElement('p');
+                description.textContent = destination.description;
+
+                info.appendChild(heading);
+                info.appendChild(description);
+
+                card.addEventListener('click', () => showBookingConfirmation(destination.name));
+
+                card.appendChild(image);
+                card.appendChild(info);
+
+                destinationList.appendChild(card);
+            });
+
+            function showBookingConfirmation(destinationName) {
+                const confirmation = confirm(`Do you want to book a ticket to ${destinationName}?`);
+                if (confirmation) {
+                    redirectToTicketPage(destinationName);
+                }
+            }
+
+            function redirectToTicketPage(destinationName) {
+                // Customize the URL based on your project structure
+                const ticketPageURL = `${destinationName.toLowerCase()}_ticket.html`;
+                window.location.href = ticketPageURL;
+            }
+        });
+    </script>
+</body>
+</html>

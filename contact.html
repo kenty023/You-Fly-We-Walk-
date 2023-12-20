@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="x-icon" href="image/logo.jpg">
+    <title>AVIATION</title>
+</head>
+<body class="index-page">
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="image/logo.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" aria-hidden="true"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="ticket.html">SERVICES</a></li>
+                    <li><a href="services.html">PRODUCTS</a></li>
+                    <li><a href="aboutus.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" aria-hidden="true"></i>
+        </nav>
+
+
+
+<!-- ---call--- -->
+
+<section class="cta">
+    <h1>Book To Us Anytime and <br>Anywhere all around the world.</h1>
+    <a href=" " class="hero-btn">CONTACT US</a>
+    <div class="social-link">
+        <a href="" target="_blank"><i class="fa fa-facebook"></i></a></i>
+        <a href="" target="_blank"><i class="fa fa-instagram"></i></a></i>
+        <a href="" target="_blank"><i class="fa fa-twitter"></i></a></i>
+        <a href="" target="_blank"><i class="fa fa-youtube-play"></i></a></i>
+        <a href="" target="_blank"><i class="fa fa-telegram"></i></a></i>
+        
+    </div>
+</section>
+
+<style>
+    nav
+{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img
+{
+    width: 75px;
+}
+
+.nav-links
+{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li
+{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links ul li::after
+{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #070606;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after
+{
+    width: 100%;
+}
+
+.text-box
+{
+    width: 90%;
+    color: #080808;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+.text-box p
+{
+    margin: 10px 0 40px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.hero-btn
+{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover
+{
+    border: 1px solid #e9e7e7;
+    background-color: #e6d9d9;
+    color: black;
+}
+
+nav .fa {
+    display: none;
+}
+
+
+@media(max-width: 700px)
+{
+    .text-box h1
+    {
+        font-size: 20px;
+    }
+    .nav-links ul li
+    {
+        display: block;
+    }
+    .nav-links
+    {
+        position: absolute;
+        background: black;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa
+    {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul
+    {
+        padding: 30px;
+    }
+}
+
+.cta
+{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(image/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta h1
+{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+@media (max-width: 700px)
+{
+    .cta h1
+    {
+        font-size: 24px;
+    }
+}
+
+/*footer*/
+
+#footer {
+    padding: 100px 0 20px;
+    background: #111111ef;
+    position: relative;
+}
+
+.footer-row {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.footer-row h1 {
+    margin: 10px 0;
+}
+
+.footer-row p {
+    line-height: 35px;
+}
+
+
+.footer-img {
+    max-width: 370px;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,-50%);
+}
+
+.social-link {
+    text-align: center;
+}
+.social-link .fa {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid rgb(255, 246, 246);
+    margin: 40px 5px 0;
+    color: rgb(247, 247, 247);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.social-link .fa:hover {
+    background: rgb(255, 254, 254);
+    color: #000000;
+    transform: translateY(-7px);
+}
+
+.social-link p{
+    font-size: 12px;
+    margin: 20px;
+}
+
+@media screen and (max-width: 770px) {
+
+    .footer-left, .footer-right {
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+    .footer-img {
+        top: 25%;
+    }
+}
+
+/* ---about us---- */
+
+.sub-header
+{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(image/sub.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #000000;
+}
+
+.sub-header h1
+{
+    margin-top: 50px;
+}
+
+.about-us
+{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.about-col
+{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.about-col img
+{
+    width: 100%;
+}
+
+.about-col h1
+{
+    padding-top: 0;
+}
+
+.about-col p
+{
+    padding: 15px 0 25px;
+}
+
+.red-btn
+{
+    border: 1px solid #000000;
+    background: transparent;
+    color: #000000;
+}
+
+.red-btn:hover
+{
+    color: #000000;
+
+}
+
+
+/* ----sub header 1---- */
+
+.sub-header
+{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(image/sub.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #000000;
+}
+
+.sub-header h1
+{
+    margin-top: 50px;
+}
+
+.about-us
+{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.about-col
+{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.about-col img
+{
+    width: 100%;
+}
+
+.about-col h1
+{
+    padding-top: 0;
+}
+
+.about-col p
+{
+    padding: 15px 0 25px;
+}
+
+.red-btn
+{
+    border: 1px solid #000000;
+    background: transparent;
+    color: #000000;
+}
+
+.red-btn:hover
+{
+    color: #000000;
+
+}
+</style>
+
+<!--footer-->
+
+    
+    
+<!-- javascrip -->
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
